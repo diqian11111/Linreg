@@ -1,3 +1,4 @@
+library(MASS)
 data(cats, package = "MASS")
 l1 <- linmodEst(cbind(cats$Bwt,cats$Sex),cats$Hwt)
 l2 <- lm(Hwt ~ Bwt * Sex, data = cats)
