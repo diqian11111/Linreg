@@ -32,9 +32,42 @@ linmodEst <- function(x, y) {
   )
 }
 
+
+#' Linear regression
+#'
+#' Runs an OLS regression not unlike \code{\link{lm}}
+#'
+#' @param X covariate matrix (p x n) with no intercept
+#'
+#' @return A list with 4 elements: coefficients, vcov, sigma, df
+#'
+#' @examples
+#' data(mtcars)
+#' X <- as.matrix(mtcars[, c("cyl", "disp", "hp")])
+#' y <- mtcars[, "mpg"]
+#' linmodEst(y, X)
+#'
+#' @export
+#'
 linmod <- function(x, ...)
   UseMethod("linmod")
 
+#' Linear regression
+#'
+#' Runs an OLS regression not unlike \code{\link{lm}}
+#'
+#' @param X covariate matrix (p x n) with no intercept
+#'
+#' @return A list with 4 elements: coefficients, vcov, sigma, df
+#'
+#' @examples
+#' data(mtcars)
+#' X <- as.matrix(mtcars[, c("cyl", "disp", "hp")])
+#' y <- mtcars[, "mpg"]
+#' linmodEst(y, X)
+#'
+#' @export
+#'
 linmod.default <- function(x, y, ...) {
   x <- as.matrix(x)
   y <- as.numeric(y)
@@ -46,6 +79,22 @@ linmod.default <- function(x, y, ...) {
   return(est)
 }
 
+#' Linear regression
+#'
+#' Runs an OLS regression not unlike \code{\link{lm}}
+#'
+#' @param X covariate matrix (p x n) with no intercept
+#'
+#' @return A list with 4 elements: coefficients, vcov, sigma, df
+#'
+#' @examples
+#' data(mtcars)
+#' X <- as.matrix(mtcars[, c("cyl", "disp", "hp")])
+#' y <- mtcars[, "mpg"]
+#' linmodEst(y, X)
+#'
+#' @export
+#'
 print.linmod <- function(x, ...) {
   cat("Call:\n")
   print(x$call)
@@ -53,6 +102,22 @@ print.linmod <- function(x, ...) {
   print(x$coefficients)
 }
 
+#' Linear regression
+#'
+#' Runs an OLS regression not unlike \code{\link{lm}}
+#'
+#' @param fomurla covariate matrix (p x n) with no intercept
+#'
+#' @return A list with 4 elements: coefficients, vcov, sigma, df
+#'
+#' @examples
+#' data(mtcars)
+#' X <- as.matrix(mtcars[, c("cyl", "disp", "hp")])
+#' y <- mtcars[, "mpg"]
+#' linmodEst(y, X)
+#'
+#' @export
+#'
 linmod.formula <- function(formula, data = list(), ...) {
   mf <- model.frame(formula = formula, data = data)
   x <- model.matrix(attr(mf, "terms"), data = mf)
