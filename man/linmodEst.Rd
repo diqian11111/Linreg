@@ -19,7 +19,7 @@ Runs an OLS regression not unlike \code{\link{lm}}
 }
 \examples{
 data(mtcars)
-X <- as.matrix(mtcars[, c("cyl", "disp", "hp")])
+x <- as.matrix(mtcars[, c("cyl", "disp", "hp")])
 y <- mtcars[, "mpg"]
 linmodEst(y, x)
 
