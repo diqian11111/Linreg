@@ -3,7 +3,7 @@
 #' Runs an OLS regression not unlike \code{\link{lm}}
 #'
 #' @param y response vector (1 x n)
-#' @param X covariate matrix (p x n) with no intercept
+#' @param x covariate matrix (p x n) with no intercept
 #'
 #' @return A list with 4 elements: coefficients, vcov, sigma, df
 #'
