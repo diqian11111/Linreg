@@ -9,7 +9,7 @@ linmodEst(x, y)
 \arguments{
 \item{y}{response vector (1 x n)}
 
-\item{X}{covariate matrix (p x n) with no intercept}
+\item{x}{covariate matrix (p x n) with no intercept}
 }
 \value{
 A list with 4 elements: coefficients, vcov, sigma, df
@@ -21,6 +21,6 @@ Runs an OLS regression not unlike \code{\link{lm}}
 data(mtcars)
 X <- as.matrix(mtcars[, c("cyl", "disp", "hp")])
 y <- mtcars[, "mpg"]
-linmodEst(y, X)
+linmodEst(y, x)
 
 }
